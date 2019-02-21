@@ -10,6 +10,9 @@
   <script src="https://cdnjs.cloudflare.com/ajax/libs/redux/4.0.1/redux.min.js"></script>
 
   <style>
+    * {
+      box-sizing: border-box;
+    }
     body {
       display: flex;
       justify-content: center;
@@ -21,58 +24,10 @@
 
 <body>
 
-  <button id="button">change background</button>
-  <!-- <div id="app"></div>
-  <script src="js/dist/vendors~FirstComp.js"></script>
-  <script src="js/dist/FirstComp.js"></script> -->
   <script>
-    const { createStore, combineReducers} = Redux
+    const { createStore, combineReducers } = Redux
+ 
 
-    //console.log(Redux)
-    // Action creators
-    const CLICKED_BUTTON = (color) => {
-      // Action (returns object)
-      return {
-        type: 'CLICKED_BUTTON',
-        payload: color
-      }
-    }
-
-    // dispatcher looks at all the reducers and dispatches corresponding action
-
-    // Reducers
-    const initialState = {
-      color: 'blue'
-    }
-    const viewReducer = (state = initialState, action) => {
-      // immutable = we are not changing original state, we are creating new state
-      switch (action.type) {
-        case 'CLICKED_BUTTON':
-          let newState = Object.assign({}, state, {
-            color: action.payload
-          })
-          //console.log(newState)
-          return newState
-          break;
-
-        default:
-          return state
-          break;
-      }
-    }
-    // console.log(viewReducer(initialState, CLICKED_BUTTON()))
-
-    const allReducers = combineReducers({
-      viewReducer: viewReducer
-    })
-
-    const store = createStore(allReducers)
-    console.log(`==========Initial store`)
-    console.log(store.getState())
-    console.log(`==========Updated store with action CLICKED BUTTON`)
-    store.dispatch(CLICKED_BUTTON('purple'))
-    console.log(store.getState())
-    
   </script>
 </body>
 
