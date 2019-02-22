@@ -5,24 +5,184 @@
   <meta charset="utf-8">
   <title>CodingPhase Starter Kit</title>
   <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
   <link rel="stylesheet" href="/css/styles.css">
   <script async defer src="https://buttons.github.io/buttons.js"></script>
+  
   <script src="https://cdnjs.cloudflare.com/ajax/libs/redux/4.0.1/redux.min.js"></script>
 
   <style>
     * {
       box-sizing: border-box;
     }
-    body {
+    #approot {
+
+    }
+    .container {
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+    .all-books {
+      display: grid;
+      grid-template-columns: 1fr 1fr 1fr;
+      grid-gap: 40px 20px;
+      padding: 40px 0;
+    }
+    .book-container {
+      height: 300px;
       display: flex;
       justify-content: center;
       align-items: center;
+    }
+    .book-container .book {
+      background: red;
+      width: 200px;
+      height: 300px;
+      cursor: pointer;
+      background-size: cover;
+      background-position: center;
+      background-repeat: none;
+    }
+    #myList {
+      background: white;
+      position: fixed;
+      top: 0;
+      right: 0;
+      width: 400px;
       height: 100vh;
+      padding: 20px;
+      -webkit-box-shadow: -5px 0px 21px 0px rgba(0,0,0,0.75);
+      -moz-box-shadow: -5px 0px 21px 0px rgba(0,0,0,0.75);
+      box-shadow: -5px 0px 21px 0px rgba(0,0,0,0.75);
+      transform: translate3d(400px, 0, 0);
+      transition: transform .4s ease-in-out;
+    }
+    #myList.active {
+      transform: translate3d(0, 0, 0);
+    }
+    #myList h3 {
+      font-size: 2rem;
+      text-align: center;
+      margin-bottom: 1.5rem;
+    }
+    #myList ul {
+      margin: 0 0 1.5rem 20px;
+    }
+    #myList ul li {
+      display: list-item;
+      padding: 10px 0;
+    }
+    #myList ul li span.delete-btn {
+      display: inline-block;
+      padding: 10px;
+      background: red;
+      color: white;
+      cursor: pointer;
+      border-radius: 5px;
+      margin-left: 20px;
+    }
+    #myList .close-list {
+      display: block;
+      margin: 0 auto;
+      background: black;
+      color: white;
+      padding: 20px 40px;
+      text-align: center;
+      cursor: pointer;
+    }
+    .open-list {
+      position: fixed;
+      top: 0;
+      right: 0;
+      background: black;
+      padding: 20px;
+      font-size: 3rem;
+      color: white;
+      cursor: pointer;
+    }
+    .open-list.closed {
+      display: block;
+    }
+    .open-list.open {
+      display: none;
     }
   </style>
 </head>
 
 <body>
+
+  <div id="approot">
+    <div class="container">
+      <div class="open-list">
+          <i class="fas fa-bars"></i>
+      </div>
+      <section class="all-books">
+        <div class="book-container">
+          <div class="book" style="background-image: url('https://upload.wikimedia.org/wikipedia/en/thumb/2/2a/X-Men_v1_141.jpg/220px-X-Men_v1_141.jpg');">
+
+          </div>
+        </div>
+
+        <div class="book-container">
+          <div class="book">
+
+          </div>
+        </div>
+
+        <div class="book-container">
+          <div class="book">
+
+          </div>
+        </div>
+
+        <div class="book-container">
+            <div class="book">
+    
+            </div>
+          </div>
+    
+          <div class="book-container">
+            <div class="book">
+    
+            </div>
+          </div>
+    
+          <div class="book-container">
+            <div class="book">
+    
+            </div>
+          </div>
+
+          <div class="book-container">
+              <div class="book">
+      
+              </div>
+            </div>
+      
+            <div class="book-container">
+              <div class="book">
+      
+              </div>
+            </div>
+      
+            <div class="book-container">
+              <div class="book">
+      
+              </div>
+            </div>
+      </section>
+    </div>
+    <section id="myList">
+      <h3>My list of books</h3>
+      <ul>
+        <li>Harry potter <span class="delete-btn">Delete</span></li>
+        <li>Harry potter <span class="delete-btn">Delete</span></li>
+        <li>Harry potter <span class="delete-btn">Delete</span></li>
+        <li>Harry potter <span class="delete-btn">Delete</span></li>
+      </ul>
+      <div class="close-list">Close list</div>
+    </section>
+  </div>
 
   <script>
     const { createStore, combineReducers } = Redux
