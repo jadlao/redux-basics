@@ -97,7 +97,7 @@
     jsonpArray = jsonpArray.slice();
     for (var i = 0; i < jsonpArray.length; i++) webpackJsonpCallback(jsonpArray[i]);
     var parentJsonpFunction = oldJsonpFunction;
-    deferredModules.push([ "./assets/js/components/FirstComp.js", "vendors~FirstComp" ]);
+    deferredModules.push([ "./assets/js/components/FirstComp.js", "vendors~FirstComp~main" ]);
     return checkDeferredModules();
 })({
     "./assets/js/components/FirstComp.js": function(module, __webpack_exports__, __webpack_require__) {
