@@ -18,6 +18,9 @@
     #approot {
 
     }
+    #approot.popupOpen {
+      filter: blur(25px);
+    } 
     .container {
       max-width: 1200px;
       margin: 0 auto;
@@ -167,6 +170,7 @@
       font-size: 1.1rem;
       font-weight: 400;
       line-height: 1.4;
+      margin-bottom: 1.5rem;
     }
     #modal .modal-container .close-modal {
       position: absolute;
@@ -177,119 +181,21 @@
       background: black;
       cursor: pointer;
     }
+    #modal .modal-container .add-btn {
+      padding: 20px 40px;
+      color: white;
+      background: purple;
+      cursor: pointer;
+      display: inline-block;
+    }
   </style>
 </head>
 
 <body>
-
-  <div id="approot">
-    <div class="container">
-      <div class="open-list">
-          <i class="fas fa-bars"></i>
-      </div>
-      <section class="all-books">
-        <div class="book-container">
-          <div class="book" style="background-image: url('https://upload.wikimedia.org/wikipedia/en/thumb/2/2a/X-Men_v1_141.jpg/220px-X-Men_v1_141.jpg');">
-
-          </div>
-        </div>
-
-        <div class="book-container">
-          <div class="book">
-
-          </div>
-        </div>
-
-        <div class="book-container">
-          <div class="book">
-
-          </div>
-        </div>
-
-        <div class="book-container">
-            <div class="book">
-    
-            </div>
-          </div>
-    
-          <div class="book-container">
-            <div class="book">
-    
-            </div>
-          </div>
-    
-          <div class="book-container">
-            <div class="book">
-    
-            </div>
-          </div>
-
-          <div class="book-container">
-              <div class="book">
-      
-              </div>
-            </div>
-      
-            <div class="book-container">
-              <div class="book">
-      
-              </div>
-            </div>
-      
-            <div class="book-container">
-              <div class="book">
-      
-              </div>
-            </div>
-      </section>
-    </div>
-    <section id="myList">
-      <h3>My list of books</h3>
-      <ul>
-        <li>Harry potter <span class="delete-btn">Delete</span></li>
-        <li>Harry potter <span class="delete-btn">Delete</span></li>
-        <li>Harry potter <span class="delete-btn">Delete</span></li>
-        <li>Harry potter <span class="delete-btn">Delete</span></li>
-      </ul>
-      <div class="close-list">Close list</div>
-    </section>
-    <section id="modal" class="active">
-      <div class="modal-container">
-        <div class="close-modal">
-            <i class="fas fa-times"></i>
-        </div>
-        <div class="modal-grid">
-          <div class="images">
-            <div class="cover" style="background-image: url('https://upload.wikimedia.org/wikipedia/en/thumb/2/2a/X-Men_v1_141.jpg/220px-X-Men_v1_141.jpg');">
-              cover image
-            </div>
-          </div>
-            <div class="info">
-              <h2>Title</h2>
-              <div class="info-line">
-                <span class="bold">Author: </span>
-                chris clairemont
-              </div>
-              <div class="info-line">
-                <span class="bold">Category: </span>
-                graphic novel
-              </div>
-              <div class="info-line">
-                <span class="bold">Published: </span>
-                1981
-              </div>
-              <p class="review">The Marvel Cinematic Universe is an American media franchise and shared universe that is centered on a series of superhero films, independently produced by Marvel Studios and based on characters that appear in American comic books published by Marvel Comics.</p>
-            </div>
-        </div>
-    </div>
-    </section>
-  </div>
-
-  <script>
-    const { createStore, combineReducers } = Redux
-    
-
-  </script>
+  <div id="app"></div>
+  <div id="modalroot"></div>
+  <script src="js/dist/vendors~BooksApp.js"></script>
+  <script src="js/dist/BooksApp.js"></script>
 </body>
 
 </html>
